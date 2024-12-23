@@ -1,6 +1,7 @@
 import argparse
 import os
 from defaultPlugins import rootDomain  # Assuming rootDomain.py is in the same directory
+from defaultPlugins import __enum__
 
 # Filter URL to remove http:// or https://
 def filter_url(domain):
@@ -32,12 +33,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", "--domain", help="Domain name", required=True)
     args = parser.parse_args()
-
     # Filter the URL to remove http/https
     domain = filter_url(args.url)
-
     # Create results and domain directories
     result_dir(domain)
-
     # Call rootDomain.main() with the domain
     rootDomain.main(domain)
+    __enum__.main(domain)
+
