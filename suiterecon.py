@@ -17,15 +17,15 @@ def result_dir(domain):
     if not os.path.exists(results_path):
         try:
             os.mkdir(results_path)
-            #print(f"Directory '{results_path}' created.")
+            print(f"Directory '{results_path}' created.")
         except Exception as e:
-            #print(f"Error creating directory '{results_path}': {e}")
+            print(f"Error creating directory '{results_path}': {e}")
             return
 
     # Create the subdirectory for the domain
     domain_path = os.path.join(results_path, domain, "rootDomain")
     os.makedirs(domain_path, exist_ok=True)  # This creates all necessary directories
-    #print(f"Result directory '{domain_path}' created.")
+    print(f"Result directory '{domain_path}' created.")
 
 # Main Function to Process Input
 if __name__ == "__main__":
