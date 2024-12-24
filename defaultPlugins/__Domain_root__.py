@@ -1,9 +1,9 @@
 import os
 import requests
-from time import sleep
 import subprocess
 import json
 import re
+import time
 
 def main(domain):
     print(f"Root Domain: {domain}")
@@ -55,7 +55,7 @@ def robots(domain):
             print(f"Attempt {attempt + 1} failed: {e}")
             if attempt < retries - 1:
                 print(f"Retrying in 2 seconds...")
-                sleep(2)  # Wait before retrying
+                time.sleep(2)  # Wait before retrying
             else:
                 print("Max retries reached. Could not fetch robots.txt.")
 
@@ -78,7 +78,7 @@ def Nslookup(domain):
     os.makedirs(path, exist_ok=True)
     
     # Define a single output file to store all nslookup results
-    output_file = f"{path}/nslookup_all.txt"
+    output_file = f"{path}/nslookup.txt"
     
     # Open the output file in append mode
     with open(output_file, 'a') as file:
@@ -195,12 +195,19 @@ def theHarvesterJson(data_file, domain):
 
     # Write extracted data to files
     write_to_file("extracted_ips.txt", ips)
+    time.sleep(2)
     write_to_file("extracted_subdomains.txt", subdomains)
+    time.sleep(2)
     write_to_file("asns.txt", data.get("asns", []))
+    time.sleep(2)
     write_to_file("emails.txt", data.get("emails", []))
+    time.sleep(2)
     write_to_file("ips.txt", data.get("ips", []) + ips)  # Combine existing and extracted IPs
+    time.sleep(2)
     write_to_file("hosts.txt", data.get("hosts", []))
+    time.sleep(2)
     write_to_file("interesting_urls.txt", data.get("interesting_urls", []))
+    time.sleep(2)
     write_to_file("shodan.txt", data.get("shodan", []))
 
     print(f"Data and extracted hosts have been written to the folder '{output_dir}'.")

@@ -2,11 +2,11 @@ import os
 import subprocess
 from urllib.parse import quote
 
-
+# Fetches subdomains from crt.sh for the given domain
 def crt_sh(domain):
     path = f"results/{domain}/fetchSubdomains/recon_mode/Passive/"
     os.makedirs(path, exist_ok=True)
-    output_file = f"{path}/crt.sh.txt"
+    output_file = f"{path}crt.sh.txt"
     encoded_domain = quote(domain)
     url = f"https://crt.sh/?q={encoded_domain}"
 
@@ -27,10 +27,10 @@ def crt_sh(domain):
     except Exception as e:
         print(f"[!] Error fetching data from crt.sh: {e}")
 
-
+# Filters subdomains from crt.sh results
 def crtsh_filter(domain):
     input_file = f"results/{domain}/fetchSubdomains/recon_mode/Passive/crt.sh.txt"
-    output_file = f"results/{domain}/fetchSubdomains/recon_mode/Passive/crtsh.txt"
+    output_file = f"results/{domain}/fetchSubdomains/recon_mode/Passive/crtsh.{domain}.txt"
 
     print("[+] Filtering subdomains...")
     try:
@@ -47,7 +47,7 @@ def crtsh_filter(domain):
     except Exception as e:
         print(f"[!] Error during filtering: {e}")
 
-
+# Removes duplicate lines from a file
 def remove_duplicates(file_path):
     print(f"[+] Removing duplicates from {file_path}...")
     try:
@@ -59,7 +59,7 @@ def remove_duplicates(file_path):
     except Exception as e:
         print(f"[!] Error removing duplicates: {e}")
 
-
+# Runs passive enumeration with assetfinder
 def passive_enum(domain, output_file):
     print("[+] Running passive enumeration with assetfinder...")
     try:
@@ -68,11 +68,11 @@ def passive_enum(domain, output_file):
             subprocess.run(command, stdout=f, check=True)
         print(f"[+] Passive enumeration results saved at: {output_file}")
     except FileNotFoundError:
-        print("[!] Assetfinder not installed or not in PATH.")
+        print("[!] Assetfinder not installed.")
     except Exception as e:
         print(f"[!] Error running assetfinder: {e}")
 
-
+# Uses subfinder to enumerate subdomains
 def subfinder(domain, output_file):
     print("[+] Running subfinder...")
     try:
@@ -80,11 +80,25 @@ def subfinder(domain, output_file):
         subprocess.run(command, check=True)
         print(f"[+] Subfinder results saved at: {output_file}")
     except FileNotFoundError:
-        print("[!] Subfinder not installed or not in PATH.")
+        print("[!] Subfinder not installed.")
     except Exception as e:
         print(f"[!] Error running subfinder: {e}")
 
+# Runs findomain for subdomain enumeration
+def findomain(domain, output_file):
+    print("[+] Running findomain...")
+    try:
+        command = ["findomain", "-t", domain, "-o"]
+        subprocess.run(command, check=True)
+        default_output = f"{domain}.txt"
+        os.rename(default_output, output_file)
+        print(f"[+] Findomain results saved at: {output_file}")
+    except FileNotFoundError:
+        print("[!] Findomain not installed.")
+    except Exception as e:
+        print(f"[!] Error running findomain: {e}")
 
+# Runs amass for passive enumeration
 def amass(domain, output_file):
     print("[+] Running amass...")
     try:
@@ -92,13 +106,13 @@ def amass(domain, output_file):
         subprocess.run(command, check=True)
         print(f"[+] Amass results saved at: {output_file}")
     except FileNotFoundError:
-        print("[!] Amass not installed or not in PATH.")
+        print("[!] Amass not installed.")
     except Exception as e:
         print(f"[!] Error running amass: {e}")
 
-
+# Filters and deduplicates Amass results
 def amass_filter(domain):
-    input_file = f"results/{domain}/fetchSubdomains/recon_mode/Passive/amass-notFilter.{domain}.txt"  # Corrected filename
+    input_file = f"results/{domain}/fetchSubdomains/recon_mode/Passive/amass-notFilter.txt"  # Corrected filename
     output_file = f"results/{domain}/fetchSubdomains/recon_mode/Passive/amass.{domain}.txt"  # Corrected filename
 
     print("[+] Filtering and removing duplicates from Amass output...")
@@ -110,39 +124,25 @@ def amass_filter(domain):
     except Exception as e:
         print(f"[!] Error during Amass filtering: {e}")
 
-    os.remove(input_file)  # Removing the correct file
-        
+    os.remove(input_file)
 
+# Main function to coordinate enumeration
 def main(domain):
     print(f"[+] Starting subdomain enumeration for: {domain}")
-    
-    # Create a directory for results
-    path = f"results/{domain}/fetchSubdomains/recon_mode/Passive"
+    path = f"results/{domain}/fetchSubdomains/recon_mode/Passive/"
     os.makedirs(path, exist_ok=True)
 
-    # Paths for saving the output
-    assetfinder_output_file = f"{path}/assetfinder.{domain}.txt"
-    subfinder_output_file = f"{path}/subfinder.{domain}.txt"
-    amass_output_file = f"{path}/amass.{domain}.txt"
-
-    # Start the process
     crt_sh(domain)
     crtsh_filter(domain)
-    remove_duplicates(f"results/{domain}/fetchSubdomains/recon_mode/Passive/crtsh.txt")
-    
-    # Run passive enumeration first
-    passive_enum(domain, assetfinder_output_file)
-    
-    # Then run subfinder
-    subfinder(domain, subfinder_output_file)
-    
-    # Run amass
-    amass(domain, amass_output_file)
 
-    # Run filtering for amass results
+    remove_duplicates(f"{path}crtsh.{domain}.txt")
+    
+    passive_enum(domain, f"{path}assetfinder.{domain}.txt")
+    subfinder(domain, f"{path}subfinder.{domain}.txt")
+    findomain(domain, f"{path}findomain.{domain}.txt")
+    amass(domain, f"{path}amass-notFilter.txt")
     amass_filter(domain)
 
-
+# Entry point
 if __name__ == "__main__":
-    domain = "meesho.com"
-    main(domain)
+    main()

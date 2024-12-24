@@ -1,7 +1,7 @@
 import argparse
 import os
-from defaultPlugins import rootDomain  # Assuming rootDomain.py is in the same directory
-from defaultPlugins import __enum__
+from defaultPlugins import __Domain_root__  # Assuming rootDomain.py is in the same directory
+from defaultPlugins import __Passive_enum__
 
 # Filter URL to remove http:// or https://
 def filter_url(domain):
@@ -38,6 +38,6 @@ if __name__ == "__main__":
     # Create results and domain directories
     result_dir(domain)
     # Call rootDomain.main() with the domain
-    rootDomain.main(domain)
-    __enum__.main(domain)
+    __Domain_root__.main(domain)
+    __Passive_enum__.main(domain)
 
