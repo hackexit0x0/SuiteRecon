@@ -128,7 +128,7 @@ def amass_filter(domain):
 
 # Main function to coordinate enumeration
 def main(domain):
-    print(f"[+] Starting subdomain enumeration for: {domain}")
+    print(f"[+] Starting Passive subdomain enumeration for: {domain}")
     path = f"results/{domain}/fetchSubdomains/recon_mode/Passive/"
     os.makedirs(path, exist_ok=True)
 
