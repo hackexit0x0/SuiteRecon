@@ -34,6 +34,10 @@ def result_dir(domain):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", "--domain", help="Domain name", required=True)
+    #parser.add_argument("--opt", "--option", help="Option", required=True)
+    args = parser.parse_args()
+
+    domain = filter_url(args.url)
     args = parser.parse_args()
     # Filter the URL to remove http/https
     domain = filter_url(args.url)
@@ -44,4 +48,8 @@ if __name__ == "__main__":
     __Passive_enum__.main(domain)
     __Active_enum__.main(domain)
     __Sub_Sub_enum__.main(domain)
+    
+ 
+    
+
 

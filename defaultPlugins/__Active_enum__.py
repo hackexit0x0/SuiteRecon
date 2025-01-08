@@ -33,7 +33,7 @@ def amass(domain, output_file):
 def amass_filter(domain):
     """Filter and deduplicate Amass results."""
     input_file = f"results/{domain}/fetchSubdomains/recon_mode/Active/amass-notFilter.txt"
-    output_file = f"results/{domain}/fetchSubdomains/recon_mode/Active/amass.{domain}.txt"
+    output_file = f"results/{domain}/fetchSubdomains/recon_mode/Active/amass.txt"
 
     print("[+] Filtering and removing duplicates from Amass output...")
     try:
@@ -59,7 +59,7 @@ def main(domain):
     os.makedirs(path, exist_ok=True)
 
     # Run assetfinder and save output
-    assetfinder(domain, f"{path}assetfinder.{domain}.txt")
+    assetfinder(domain, f"{path}assetfinder.txt")
 
     # Run amass and save unfiltered output
     amass(domain, f"{path}amass-notFilter.txt")
@@ -69,4 +69,4 @@ def main(domain):
 
 # Entry point
 if __name__ == "__main__":
-    main(domain="docxinfo.site")
+    main()
