@@ -4,6 +4,10 @@ from defaultPlugins import __Domain_root__  # Assuming rootDomain.py is in the s
 from defaultPlugins import __Passive_enum__
 from defaultPlugins import __Active_enum__
 from defaultPlugins import __Sub_Sub_enum__
+from defaultPlugins import __Sub_BruteForce__
+from defaultPlugins import __Sub_Domian_Sort__
+from defaultPlugins import __Dns_resolvers__
+
 
 # Filter URL to remove http:// or https://
 def filter_url(domain):
@@ -48,6 +52,8 @@ if __name__ == "__main__":
     __Passive_enum__.main(domain)
     __Active_enum__.main(domain)
     __Sub_Sub_enum__.main(domain)
+    __Sub_Domian_Sort__.main(domain)
+    __Dns_resolvers__.main(domain)
     
  
     
