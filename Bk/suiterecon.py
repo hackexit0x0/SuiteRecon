@@ -4,9 +4,9 @@ from defaultPlugins import __Domain_root__  # Assuming rootDomain.py is in the s
 from defaultPlugins import __Passive_enum__
 from defaultPlugins import __Active_enum__
 from defaultPlugins import __Sub_Sub_enum__
-from defaultPlugins import __Sub_BruteForce__
 from defaultPlugins import __DomainSort__
 from defaultPlugins import __Dns_resolvers__
+from defaultPlugins import __SubDomainConvertIp__
 
 
 
@@ -55,6 +55,7 @@ if __name__ == "__main__":
     __Sub_Sub_enum__.main(domain)   # sub.sub doamin founde
     __DomainSort__.main(domain)  # all domian sorts 
     __Dns_resolvers__.main(domain)    # dns resolve 
+    __SubDomainConvertIp__.main(doamin)
     
     
  

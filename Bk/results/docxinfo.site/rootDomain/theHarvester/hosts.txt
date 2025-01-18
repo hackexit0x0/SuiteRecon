@@ -1,0 +1,5 @@
+blog.docxinfo.site
+blog.docxinfo.site:82.112.229.123
+mail.docxinfo.site
+pop.docxinfo.site
+smtp.docxinfo.site

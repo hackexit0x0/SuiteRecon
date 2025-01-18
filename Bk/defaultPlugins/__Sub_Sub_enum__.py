@@ -22,7 +22,7 @@ def main(domain):
     os.makedirs(path, exist_ok=True)
 
 
-    subfinder(domain, f"{path}subfinder.{domain}.txt")
+    subfinder(domain, f"{path}subfinder.txt")
 
 # Entry point
 if __name__ == "__main__":

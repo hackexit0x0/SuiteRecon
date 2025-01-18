@@ -1,0 +1,12 @@
+blog.docxinfo.site
+docxinfo.site
+www.docxinfo.site
+docxinfo.site
+mail.docxinfo.site
+pop.docxinfo.site
+smtp.docxinfo.site
+www.docxinfo.site
+mail.docxinfo.site
+pop.docxinfo.site
+smtp.docxinfo.site
+www.docxinfo.site
