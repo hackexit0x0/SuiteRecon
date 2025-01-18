@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /assets/
-Disallow: /404.php
-Allow: /
-
-Sitemap: https://www.docxinfo.site/

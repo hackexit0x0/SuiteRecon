@@ -1,2 +1,0 @@
-docxinfo.site. A 82.112.229.123
-www.docxinfo.site. CNAME docxinfo.site.

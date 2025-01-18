@@ -74,7 +74,7 @@ def main(domain):
     
     :param domain: The domain to process.
     """
-    base_path = f"results/{domain}/ip/active_Subdomains/http_https"
+    base_path = f"results/{domain}/active_Subdomains/http_https"
     os.makedirs(base_path, exist_ok=True)
 
     # Input and output file paths
@@ -93,5 +93,4 @@ def main(domain):
 # Entry point
 if __name__ == "__main__":
     # Replace 'docxinfo.site' with your domain
-    domain = "docxinfo.site"
-    main(domain)
+    main()

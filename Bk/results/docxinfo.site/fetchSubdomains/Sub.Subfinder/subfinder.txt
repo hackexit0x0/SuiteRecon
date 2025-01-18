@@ -1,5 +1,0 @@
-pop.docxinfo.site
-mail.docxinfo.site
-www.docxinfo.site
-blog.docxinfo.site
-smtp.docxinfo.site

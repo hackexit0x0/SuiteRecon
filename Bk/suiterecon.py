@@ -8,6 +8,13 @@ from defaultPlugins import __DomainSort__
 from defaultPlugins import __Dns_resolvers__
 from defaultPlugins import __SubDomainConvertIp__
 
+# extartc
+from defaultPlugins.extract import __SubdomainExtracts__
+from defaultPlugins.extract import __statusCode__
+from defaultPlugins.extract import __PortScanns__
+from defaultPlugins.extract import __techDetect__
+
+
 
 
 # Filter URL to remove http:// or https://
@@ -56,6 +63,13 @@ if __name__ == "__main__":
     __DomainSort__.main(domain)  # all domian sorts 
     __Dns_resolvers__.main(domain)    # dns resolve 
     __SubDomainConvertIp__.main(doamin)
+
+    # extract
+    __SubdomainExtracts__.main(domain)
+    __statusCode__.main(domain)
+    __PortScanns__.main(domain)
+    __techDetect__.main(domain)
+
     
     
  
