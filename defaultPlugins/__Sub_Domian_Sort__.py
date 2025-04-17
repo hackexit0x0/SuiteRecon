@@ -95,7 +95,7 @@ def save_to_file(output_list, output_file):
     except Exception as e:
         print(f"[!] Error writing to {output_file}: {e}")
 
-def process_all(domain):
+def main(domain):
     """Quick command to process all data and export it."""
     output_list = []
     rootDomain(domain, output_list)
@@ -103,10 +103,11 @@ def process_all(domain):
     Active(domain, output_list)
     #rootDomainIp(domain, output_list)  # Uncomment if needed
 
-    output_file = f"results/{domain}/rootDomain/SubDomains/allsubdomain.txt"
+    output_file = f"results/{domain}/fetchSubdomains/SubDomains/allsubdomain.txt"
     save_to_file(output_list, output_file)
 
 # Entry point
 if __name__ == "__main__":
-    domain = "docxinfo.site"  # Initialize the domain variable
-    process_all(domain)
+   #domain = "docxinfo.site"  # Initialize the domain variable
+   #process_all(domain)
+   main()

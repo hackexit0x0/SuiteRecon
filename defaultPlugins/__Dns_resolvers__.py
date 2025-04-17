@@ -36,7 +36,7 @@ def process_output(output_file):
         # Define the processed output file path in the same directory as output_file
         directory = os.path.dirname(output_file)  # Get the directory where the output file is located
         domain = os.path.basename(output_file).split('.')[0]  # Extract domain name from the file name
-        processed_output_file = os.path.join(directory, f"Subdomain.{domain}.txt")
+        processed_output_file = os.path.join(directory, f"active.{domain}.txt")
 
         # Command to process output.txt and generate a final result file
         command = f"cat {output_file} | awk '{{print$1}}' | sed 's/.$//' | sort -u > {processed_output_file}"
@@ -65,7 +65,7 @@ def main(domain):
         if not os.path.exists(resolvers):
             raise FileNotFoundError(f"Resolvers file not found at: {resolvers}")
         
-        path = f"results/{domain}/rootDomain/SubDomains/"
+        path = f"results/{domain}/fetchSubdomains/SubDomains/"
         subdomain_input_file = f"{path}allsubdomain.txt"  # Input file for MassDNS
         massdns_output = f"{path}massdns_output.txt"
         
@@ -83,5 +83,6 @@ def main(domain):
 
 # Example usage
 if __name__ == "__main__":
-    target_domain = "docxinfo.site"  # Replace with your target domain
-    main(target_domain)
+   # target_domain = "docxinfo.site"  # Replace with your target domain
+   # main(target_domain)
+   main()
