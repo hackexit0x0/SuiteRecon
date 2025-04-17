@@ -43,5 +43,6 @@ def main(domain):
     nmap(domain, output_file)
 
 if __name__ == "__main__":
-    domain_input = input("Enter the domain to enumerate subdomains: ").strip()
-    main(domain_input)
+   # domain_input = input("Enter the domain to enumerate subdomains: ").strip()
+   # main(domain_input)
+   main()

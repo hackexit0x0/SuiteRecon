@@ -155,8 +155,8 @@ def main(domain):
         passive_enum(domain, f"{path}assetfinder.txt")
         subfinder(domain, f"{path}subfinder.txt")
         findomain(domain, f"{path}findomain.txt")
-        amass(domain, f"{path}amass-notFilter.txt")
-        amass_filter(domain)
+       # amass(domain, f"{path}amass-notFilter.txt")
+       # amass_filter(domain)
 
     except Exception as e:
         print(f"[!] Error in main: {e}")

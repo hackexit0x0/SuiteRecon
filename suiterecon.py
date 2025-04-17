@@ -52,6 +52,7 @@ if __name__ == "__main__":
     __Passive_enum__.main(domain)
     __Active_enum__.main(domain)
     __Sub_Sub_enum__.main(domain)
+    __Sub_BruteForce__.main(domain)
     __Sub_Domian_Sort__.main(domain)
     __Dns_resolvers__.main(domain)
     
