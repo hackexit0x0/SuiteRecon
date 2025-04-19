@@ -62,10 +62,10 @@ def main(domain):
     assetfinder(domain, f"{path}assetfinder.txt")
 
     # Run amass and save unfiltered output
-    amass(domain, f"{path}amass-notFilter.txt")
+   # amass(domain, f"{path}amass-notFilter.txt")
 
     # Filter and deduplicate Amass output
-    amass_filter(domain)
+   # amass_filter(domain)
 
 # Entry point
 if __name__ == "__main__":

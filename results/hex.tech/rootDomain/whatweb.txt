@@ -1,0 +1,135 @@
+WhatWeb report for http://hex.tech
+Status    : 301 Moved Permanently
+Title     : 301 Moved Permanently
+IP        : 104.18.20.80
+Country   : UNITED STATES, US
+
+Summary   : HTTPServer[cloudflare], RedirectLocation[https://hex.tech/], UncommonHeaders[x-content-type-options,cf-ray,alt-svc]
+
+Detected Plugins:
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	String       : cloudflare (from server string)
+
+[ RedirectLocation ]
+	HTTP Server string location. used with http-status 301 and 
+	302 
+
+	String       : https://hex.tech/ (from location)
+
+[ UncommonHeaders ]
+	Uncommon HTTP server headers. The blacklist includes all 
+	the standard headers and many non standard but common ones. 
+	Interesting but fairly common headers should have their own 
+	plugins, eg. x-powered-by, server and x-aspnet-version. 
+	Info about headers can be found at www.http-stats.com 
+
+	String       : x-content-type-options,cf-ray,alt-svc (from headers)
+
+HTTP Headers:
+	HTTP/1.1 301 Moved Permanently
+	Date: Thu, 17 Apr 2025 05:03:49 GMT
+	Content-Type: text/html
+	Content-Length: 167
+	Connection: close
+	Cache-Control: max-age=3600
+	Expires: Thu, 17 Apr 2025 06:03:49 GMT
+	Location: https://hex.tech/
+	Vary: Accept-Encoding
+	X-Content-Type-Options: nosniff
+	Server: cloudflare
+	CF-RAY: 931960cbae63002c-BOM
+	alt-svc: h3=":443"; ma=86400
+	
+WhatWeb report for https://hex.tech/
+Status    : 200 OK
+Title     : <None>
+IP        : 104.18.20.80
+Country   : UNITED STATES, US
+
+Summary   : Frame, HTML5, HTTPServer[cloudflare], MetaGenerator[Gatsby 5.13.7], Open-Graph-Protocol[website], Script[module], Strict-Transport-Security[max-age=31536000; includeSubDomains; preload], UncommonHeaders[cf-ray,access-control-allow-origin,link,referrer-policy,x-content-type-options,report-to,nel,cf-cache-status,alt-svc], X-UA-Compatible[ie=edge]
+
+Detected Plugins:
+[ Frame ]
+	This plugin detects instances of frame and iframe HTML 
+	elements. 
+
+
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration 
+
+
+[ HTTPServer ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	String       : cloudflare (from server string)
+
+[ MetaGenerator ]
+	This plugin identifies meta generator tags and extracts its 
+	value. 
+
+	String       : Gatsby 5.13.7
+
+[ Open-Graph-Protocol ]
+	The Open Graph protocol enables you to integrate your Web 
+	pages into the social graph. It is currently designed for 
+	Web pages representing profiles of real-world things . 
+	things like movies, sports teams, celebrities, and 
+	restaurants. Including Open Graph tags on your Web page, 
+	makes your page equivalent to a Facebook Page. 
+
+	Version      : website
+
+[ Script ]
+	This plugin detects instances of script HTML elements and 
+	returns the script language/type. 
+
+	String       : module
+
+[ Strict-Transport-Security ]
+	Strict-Transport-Security is an HTTP header that restricts 
+	a web browser from accessing a website without the security 
+	of the HTTPS protocol. 
+
+	String       : max-age=31536000; includeSubDomains; preload
+
+[ UncommonHeaders ]
+	Uncommon HTTP server headers. The blacklist includes all 
+	the standard headers and many non standard but common ones. 
+	Interesting but fairly common headers should have their own 
+	plugins, eg. x-powered-by, server and x-aspnet-version. 
+	Info about headers can be found at www.http-stats.com 
+
+	String       : cf-ray,access-control-allow-origin,link,referrer-policy,x-content-type-options,report-to,nel,cf-cache-status,alt-svc (from headers)
+
+[ X-UA-Compatible ]
+	This plugin retrieves the X-UA-Compatible value from the 
+	HTTP header and meta http-equiv tag. - More Info: 
+	http://msdn.microsoft.com/en-us/library/cc817574.aspx 
+
+	String       : ie=edge
+
+HTTP Headers:
+	HTTP/1.1 200 OK
+	Date: Thu, 17 Apr 2025 05:03:50 GMT
+	Content-Type: text/html; charset=utf-8
+	Transfer-Encoding: chunked
+	Connection: close
+	Content-Encoding: gzip
+	Cf-Ray: 931960d63fa98531-BOM
+	Access-Control-Allow-Origin: *
+	Cache-Control: public, max-age=0, must-revalidate
+	Link: <https://www.googletagmanager.com>; rel="preconnect"
+	Referrer-Policy: strict-origin-when-cross-origin
+	X-Content-Type-Options: nosniff
+	Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=F4mIJkv5KiNX8S6PaPWXf4DhtwpuNLnNpoVi%2F8Z0mMZXAIhZ0fvC6XWIC9uYsEIM4OOqGa%2BNx7rjHnvgaf9Q%2BGhWP2kZNIZMk7oyjMG9xTNf3sCNGuYSpGXHuQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+	Nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+	Vary: Accept-Encoding
+	Cf-Cache-Status: DYNAMIC
+	Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+	Server: cloudflare
+	alt-svc: h3=":443"; ma=86400
+	

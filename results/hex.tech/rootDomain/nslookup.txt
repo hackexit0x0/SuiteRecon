@@ -1,0 +1,68 @@
+--- MX Records ---
+Server:		192.168.10.1
+Address:	192.168.10.1#53
+
+Non-authoritative answer:
+hex.tech	mail exchanger = 1 aspmx.l.google.com.
+hex.tech	mail exchanger = 10 alt3.aspmx.l.google.com.
+hex.tech	mail exchanger = 10 alt4.aspmx.l.google.com.
+hex.tech	mail exchanger = 5 alt1.aspmx.l.google.com.
+hex.tech	mail exchanger = 5 alt2.aspmx.l.google.com.
+
+Authoritative answers can be found from:
+
+
+==================================================
+--- NS Records ---
+Server:		192.168.10.1
+Address:	192.168.10.1#53
+
+Non-authoritative answer:
+hex.tech	nameserver = gabriel.ns.cloudflare.com.
+hex.tech	nameserver = jillian.ns.cloudflare.com.
+
+Authoritative answers can be found from:
+
+
+==================================================
+--- AAAA Records ---
+Server:		192.168.10.1
+Address:	192.168.10.1#53
+
+Non-authoritative answer:
+Name:	hex.tech
+Address: 2606:4700:8d71:364b:dfd7:a7f:369c:7450
+
+
+==================================================
+--- A Records ---
+Server:		192.168.10.1
+Address:	192.168.10.1#53
+
+Non-authoritative answer:
+Name:	hex.tech
+Address: 104.18.20.80
+Name:	hex.tech
+Address: 104.18.21.80
+
+
+==================================================
+--- CNAME Records ---
+Server:		192.168.10.1
+Address:	192.168.10.1#53
+
+Non-authoritative answer:
+*** Can't find hex.tech: No answer
+
+Authoritative answers can be found from:
+hex.tech
+	origin = gabriel.ns.cloudflare.com
+	mail addr = dns.cloudflare.com
+	serial = 2370315472
+	refresh = 10000
+	retry = 2400
+	expire = 604800
+	minimum = 1800
+
+
+==================================================

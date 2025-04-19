@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /blog/github-sync
+Disallow: /files
+Sitemap: https://hex.tech/sitemap-0.xml
+Host: https://hex.tech
