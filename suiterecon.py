@@ -50,11 +50,11 @@ if __name__ == "__main__":
     # Create results and domain directories
     result_dir(domain)
     # Call rootDomain.main() with the domain
-    #__Domain_root__.main(domain)
-    #__Passive_enum__.main(domain)
-    #__Active_enum__.main(domain)
-    #__Sub_Sub_enum__.main(domain)
-    #__Sub_BruteForce__.main(domain)
+    __Domain_root__.main(domain)
+    __Passive_enum__.main(domain)
+    __Active_enum__.main(domain)
+    __Sub_Sub_enum__.main(domain)
+    __Sub_BruteForce__.main(domain)
     __Sub_Domian_Sort__.main(domain)
     __Dns_resolvers__.main(domain)
     __nitro_scan__.main(domain)
